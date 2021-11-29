@@ -41,6 +41,6 @@ public class NumberOfCharactersTest {
         Assertions.assertNotNull(numberOfCharacters);
 
     }
-    
+
 
 }
