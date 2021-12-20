@@ -2,10 +2,8 @@ package Password_Strength_Whole_Password;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import static Password_Strength_Whole_Password.NumberOfCharactersInterface.checksNumberOfCharacters;
 import static Password_Strength_Whole_Password.NumberOfCharacters.getPasswordLength;
-
 
 public class NumberOfCharactersTest {
 
@@ -39,6 +37,32 @@ public class NumberOfCharactersTest {
         String numberOfCharacters = checksNumberOfCharacters(someText);
 
         Assertions.assertNotNull(numberOfCharacters);
+
+    }
+
+    @Test
+    public void NumberOfCharactersTestSignNumber01(){
+
+        String someText = "A little bit longer text";
+
+        NumberOfCharacters.checksNumberOfCharacters(someText);
+
+        Integer passwordLength = getPasswordLength();
+
+        Assertions.assertEquals(24, passwordLength);
+
+    }
+
+    @Test
+    public void NumberOfCharactersTestSignNumber02(){
+
+        String someText = "An even more then little bit longer text";
+
+        NumberOfCharacters.checksNumberOfCharacters(someText);
+
+        Integer passwordLength = getPasswordLength();
+
+        Assertions.assertNotEquals(24, passwordLength);
 
     }
 
