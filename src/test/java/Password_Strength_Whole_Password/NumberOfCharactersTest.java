@@ -43,26 +43,26 @@ public class NumberOfCharactersTest {
     @Test
     public void NumberOfCharactersTestSignNumber01(){
 
-        String someText = "A little bit longer text";
+        String someText = "01234";
 
         NumberOfCharacters.checksNumberOfCharacters(someText);
 
         Integer passwordLength = getPasswordLength();
 
-        Assertions.assertEquals(24, passwordLength);
+        Assertions.assertEquals(5, passwordLength);
 
     }
 
     @Test
     public void NumberOfCharactersTestSignNumber02(){
 
-        String someText = "An even more then little bit longer text";
+        String someText = "0123456789";
 
         NumberOfCharacters.checksNumberOfCharacters(someText);
 
         Integer passwordLength = getPasswordLength();
 
-        Assertions.assertNotEquals(24, passwordLength);
+        Assertions.assertNotEquals(5, passwordLength);
 
     }
 

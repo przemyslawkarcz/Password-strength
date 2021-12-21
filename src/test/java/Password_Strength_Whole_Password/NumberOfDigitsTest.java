@@ -2,6 +2,8 @@ package Password_Strength_Whole_Password;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import static Password_Strength_Whole_Password.NumberOfDigits.getCounterOfDigits;
+import static Password_Strength_Whole_Password.NumberOfDigits.checksNumberOfDigits;
 
 public class NumberOfDigitsTest {
 
@@ -10,7 +12,7 @@ public class NumberOfDigitsTest {
 
         String someDigits = "abcdef";
 
-        String checksNumberOfDigits = NumberOfDigits.checksNumberOfDigits(someDigits);
+        String checksNumberOfDigits = checksNumberOfDigits(someDigits);
 
         Assertions.assertEquals("abcdef", checksNumberOfDigits);
 
@@ -21,7 +23,7 @@ public class NumberOfDigitsTest {
 
         String someDigits = "abc def";
 
-        String checksNumberOfDigits = NumberOfDigits.checksNumberOfDigits(someDigits);
+        String checksNumberOfDigits = checksNumberOfDigits(someDigits);
 
         Assertions.assertNotEquals("abc 123456", checksNumberOfDigits);
 
@@ -32,7 +34,7 @@ public class NumberOfDigitsTest {
 
         String someDigits = "abc def ghi";
 
-        String checksNumberOfDigits = NumberOfDigits.checksNumberOfDigits(someDigits);
+        String checksNumberOfDigits = checksNumberOfDigits(someDigits);
 
         Assertions.assertNotNull(checksNumberOfDigits);
 
@@ -43,26 +45,12 @@ public class NumberOfDigitsTest {
 
         String someText = "some text without any digits";
 
-        NumberOfDigits.checksNumberOfDigits(someText);
+        checksNumberOfDigits(someText);
 
-        Integer counterOfDigits = NumberOfDigits.getCounterOfDigits();
+        Integer counterOfDigits = getCounterOfDigits();
 
         Assertions.assertEquals(0, counterOfDigits);
 
     }
-
-    @Test
-    public void numberOfDigitsTestDigitNumber02(){
-
-        String someText = "some text with some digits: 20122021";
-
-        NumberOfDigits.checksNumberOfDigits(someText);
-
-        Integer counterOfDigits = NumberOfDigits.getCounterOfDigits();
-
-        Assertions.assertNotEquals(0, counterOfDigits);
-
-    }
-
 
 }
