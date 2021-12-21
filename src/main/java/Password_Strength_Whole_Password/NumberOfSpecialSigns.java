@@ -4,10 +4,10 @@ public class NumberOfSpecialSigns implements NumberOfSpecialSignsInterface{
 
     // Secure password should have at least 1 more special character
 
-    public static Integer counterOfSpecialSigns = 0;
+    public Integer counterOfSpecialSigns = 0;
 
     // Method that checks the number of special characters in the password
-    public static String checksNumberOfSpecialSigns(String somePassword){
+    public String checksNumberOfSpecialSigns(String somePassword){
 
         String [] specialSigns = new String[]{"~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "=", "+", "[",
                 "]", "{", "}", "|", "/", ";", ":", "'", "<", ">", ",", ".", "?"};
@@ -39,7 +39,7 @@ public class NumberOfSpecialSigns implements NumberOfSpecialSignsInterface{
 
     }
 
-    public static Integer getCounterOfSpecialSigns() {
+    public Integer getCounterOfSpecialSigns() {
         return counterOfSpecialSigns;
     }
 

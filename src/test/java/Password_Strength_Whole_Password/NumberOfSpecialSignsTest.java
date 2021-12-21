@@ -2,52 +2,58 @@ package Password_Strength_Whole_Password;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static Password_Strength_Whole_Password.NumberOfSpecialSigns.getCounterOfSpecialSigns;
-import static Password_Strength_Whole_Password.NumberOfSpecialSigns.checksNumberOfSpecialSigns;
 
 public class NumberOfSpecialSignsTest {
 
     @Test
     public void checksNumberOfSpecialSignsTestReturnValue01(){
 
+        NumberOfSpecialSigns numberOfSpecialSigns = new NumberOfSpecialSigns();
+
         String someText = "abc";
 
-        String numberOfSpecialSigns = checksNumberOfSpecialSigns(someText);
+        String number = numberOfSpecialSigns.checksNumberOfSpecialSigns(someText);
 
-        Assertions.assertEquals("abc", numberOfSpecialSigns);
+        Assertions.assertEquals("abc", number);
 
     }
 
     @Test
     public void checksNumberOfSpecialSignsTestReturnValue02(){
 
+        NumberOfSpecialSigns numberOfSpecialSigns = new NumberOfSpecialSigns();
+
         String someText = "abc";
 
-        String numberOfSpecialSigns = checksNumberOfSpecialSigns(someText);
+        String number = numberOfSpecialSigns.checksNumberOfSpecialSigns(someText);
 
-        Assertions.assertNotEquals("abc ###", numberOfSpecialSigns);
+        Assertions.assertNotEquals("abc ###", number);
 
     }
 
     @Test
     public void checksNumberOfSpecialSignsTestReturnValue03(){
 
+        NumberOfSpecialSigns numberOfSpecialSigns = new NumberOfSpecialSigns();
+
         String someText = "abc def";
 
-        String numberOfSpecialSigns = checksNumberOfSpecialSigns(someText);
+        String number = numberOfSpecialSigns.checksNumberOfSpecialSigns(someText);
 
-        Assertions.assertNotNull(numberOfSpecialSigns);
+        Assertions.assertNotNull(number);
 
     }
 
     @Test
     public void checksNumberOfSpecialSignsTestSpecialSignsNumber01(){
 
+        NumberOfSpecialSigns numberOfSpecialSigns = new NumberOfSpecialSigns();
+
         String someText = "abc #$%";
 
-        String numberOfSpecialSigns = checksNumberOfSpecialSigns(someText);
+        String number = numberOfSpecialSigns.checksNumberOfSpecialSigns(someText);
 
-        Integer counterOfSpecialSigns = getCounterOfSpecialSigns();
+        Integer counterOfSpecialSigns = numberOfSpecialSigns.getCounterOfSpecialSigns();
 
         Assertions.assertEquals(3, counterOfSpecialSigns);
 

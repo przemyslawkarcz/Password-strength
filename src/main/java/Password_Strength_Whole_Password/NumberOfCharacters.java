@@ -4,10 +4,10 @@ public class NumberOfCharacters implements NumberOfCharactersInterface{
 
     // Secure password should have at least 8 characters
 
-    public static Integer passwordLength;
+    public Integer passwordLength;
 
     // Method that checks the number of characters in the password
-    public static String checksNumberOfCharacters(String somePassword){
+    public String checksNumberOfCharacters(String somePassword){
 
         passwordLength = somePassword.length();
 
@@ -17,7 +17,7 @@ public class NumberOfCharacters implements NumberOfCharactersInterface{
 
     }
 
-    public static Integer getPasswordLength() {
+    public Integer getPasswordLength() {
         return passwordLength;
     }
 

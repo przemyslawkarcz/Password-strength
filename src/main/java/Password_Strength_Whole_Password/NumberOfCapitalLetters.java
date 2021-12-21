@@ -4,10 +4,10 @@ public class NumberOfCapitalLetters implements NumberOfCapitalLettersInterface{
 
     // Secure password should have at least 1 or more capital letter
 
-    public static Integer counterOfCapitalLetters = 0;
+    public Integer counterOfCapitalLetters = 0;
 
     // Method that checks the number of capital letters in the password
-    public static String checksNumberOfCapitalLetters(String somePassword){
+    public String checksNumberOfCapitalLetters(String somePassword){
 
         String [] capitalLetters = new String[]{"A", "Ą", "B", "C", "Ć", "D", "E", "Ę", "F", "G", "H", "I", "J", "K", "L", "Ł", "M",
                 "N", "Ń", "O", "Ó", "P", "Q", "R", "S", "Ś", "T", "U", "V", "W", "X", "Y", "Z", "Ź", "Ż"};
@@ -37,7 +37,7 @@ public class NumberOfCapitalLetters implements NumberOfCapitalLettersInterface{
 
     }
 
-    public static Integer getCounterOfCapitalLetters() {
+    public Integer getCounterOfCapitalLetters() {
         return counterOfCapitalLetters;
     }
 

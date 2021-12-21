@@ -2,31 +2,31 @@ package Password_Strength_Whole_Password;
 
 import java.util.Scanner;
 
-import static Password_Strength_Whole_Password.NumberOfCapitalLetters.getCounterOfCapitalLetters;
-import static Password_Strength_Whole_Password.NumberOfCharacters.getPasswordLength;
-import static Password_Strength_Whole_Password.NumberOfDigits.getCounterOfDigits;
-import static Password_Strength_Whole_Password.NumberOfSpecialSigns.getCounterOfSpecialSigns;
-
 public class PasswordStrengthWholePassword {
 
-    public static void checksPasswordStrengthThroughTheWholePassword(){
+    public void checksPasswordStrengthThroughTheWholePassword(){
+
+        NumberOfCapitalLetters numberOfCapitalLetters = new NumberOfCapitalLetters();
+        NumberOfCharacters numberOfCharacters = new NumberOfCharacters();
+        NumberOfDigits numberOfDigits = new NumberOfDigits();
+        NumberOfSpecialSigns numberOfSpecialSigns = new NumberOfSpecialSigns();
 
         System.out.print("Enter password: ");
 
         Scanner enteredPassword = new Scanner(System.in);
         String password = enteredPassword.nextLine();
 
-        NumberOfCharacters.checksNumberOfCharacters(password);
-        Integer passwordLength = getPasswordLength();
+        numberOfCharacters.checksNumberOfCharacters(password);
+        Integer passwordLength = numberOfCharacters.getPasswordLength();
 
-        NumberOfDigits.checksNumberOfDigits(password);
-        Integer counterOfDigits = getCounterOfDigits();
+        numberOfDigits.checksNumberOfDigits(password);
+        Integer counterOfDigits = numberOfDigits.getCounterOfDigits();
 
-        NumberOfCapitalLetters.checksNumberOfCapitalLetters(password);
-        Integer counterOfCapitalLetters = getCounterOfCapitalLetters();
+        numberOfCapitalLetters.checksNumberOfCapitalLetters(password);
+        Integer counterOfCapitalLetters = numberOfCapitalLetters.getCounterOfCapitalLetters();
 
-        NumberOfSpecialSigns.checksNumberOfSpecialSigns(password);
-        Integer counterOfSpecialSigns = getCounterOfSpecialSigns();
+        numberOfSpecialSigns.checksNumberOfSpecialSigns(password);
+        Integer counterOfSpecialSigns = numberOfSpecialSigns.getCounterOfSpecialSigns();
 
         if (passwordLength <= 7){
             System.out.println("Very week password!");

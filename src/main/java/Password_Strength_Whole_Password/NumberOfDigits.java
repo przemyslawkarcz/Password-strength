@@ -4,10 +4,10 @@ public class NumberOfDigits implements NumberOfDigitsInterface{
 
     // Secure password should have at least 1 or 2 or more digits
 
-    public static Integer counterOfDigits = 0;
+    public Integer counterOfDigits = 0;
 
     // Method that checks the number of digits in the password
-    public static String checksNumberOfDigits(String somePassword){
+    public String checksNumberOfDigits(String somePassword){
 
         String [] digits = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
@@ -36,7 +36,7 @@ public class NumberOfDigits implements NumberOfDigitsInterface{
 
     }
 
-    public static Integer getCounterOfDigits() {
+    public Integer getCounterOfDigits() {
         return counterOfDigits;
     }
 

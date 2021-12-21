@@ -2,51 +2,57 @@ package Password_Strength_Whole_Password;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static Password_Strength_Whole_Password.NumberOfCapitalLetters.getCounterOfCapitalLetters;
-import static Password_Strength_Whole_Password.NumberOfCapitalLettersInterface.checksNumberOfCapitalLetters;
 
 public class NumberOfCapitalLettersTest {
 
     @Test
     public void NumberOfCapitalLettersTestReturnValue01(){
 
+        NumberOfCapitalLetters numberOfCapitalLetters = new NumberOfCapitalLetters();
+
         String someText = "some text";
 
-        String numberOfCapitalLetters = checksNumberOfCapitalLetters(someText);
+        String number = numberOfCapitalLetters.checksNumberOfCapitalLetters(someText);
 
-        Assertions.assertEquals("some text", numberOfCapitalLetters);
+        Assertions.assertEquals("some text", number);
 
     }
 
     @Test
     public void NumberOfCapitalLettersTestReturnValue02(){
 
+        NumberOfCapitalLetters numberOfCapitalLetters = new NumberOfCapitalLetters();
+
         String someText = "text";
 
-        String numberOfCapitalLetters = checksNumberOfCapitalLetters(someText);
+        String number = numberOfCapitalLetters.checksNumberOfCapitalLetters(someText);
 
-        Assertions.assertNotEquals("some text", numberOfCapitalLetters);
+        Assertions.assertNotEquals("some text", number);
 
     }
 
     @Test
     public void NumberOfCapitalLettersTestReturnValue03(){
 
+        NumberOfCapitalLetters numberOfCapitalLetters = new NumberOfCapitalLetters();
+
         String someText = "some text";
 
-        String numberOfCapitalLetters = checksNumberOfCapitalLetters(someText);
+        String number = numberOfCapitalLetters.checksNumberOfCapitalLetters(someText);
 
-        Assertions.assertNotNull(numberOfCapitalLetters);
+        Assertions.assertNotNull(number);
 
     }
 
     @Test
     public void NumberOfCapitalLettersTest01(){
 
+        NumberOfCapitalLetters numberOfCapitalLetters = new NumberOfCapitalLetters();
+
         String someText = "abc def ghi jkl";
 
-        NumberOfCapitalLetters.checksNumberOfCapitalLetters(someText);
-        Integer counter = getCounterOfCapitalLetters();
+        numberOfCapitalLetters.checksNumberOfCapitalLetters(someText);
+        Integer counter = numberOfCapitalLetters.getCounterOfCapitalLetters();
 
         Assertions.assertEquals(0, counter);
 
@@ -55,10 +61,12 @@ public class NumberOfCapitalLettersTest {
     @Test
     public void NumberOfCapitalLettersTest02(){
 
+        NumberOfCapitalLetters numberOfCapitalLetters = new NumberOfCapitalLetters();
+
         String someText = "ABC Def ghi jkl";
 
-        NumberOfCapitalLetters.checksNumberOfCapitalLetters(someText);
-        Integer counter = getCounterOfCapitalLetters();
+        numberOfCapitalLetters.checksNumberOfCapitalLetters(someText);
+        Integer counter = numberOfCapitalLetters.getCounterOfCapitalLetters();
 
         Assertions.assertEquals(4, counter);
 
@@ -67,10 +75,12 @@ public class NumberOfCapitalLettersTest {
     @Test
     public void NumberOfCapitalLettersTest03(){
 
+        NumberOfCapitalLetters numberOfCapitalLetters = new NumberOfCapitalLetters();
+
         String someText = "ABC Def ghi jkl";
 
-        NumberOfCapitalLetters.checksNumberOfCapitalLetters(someText);
-        Integer counter = getCounterOfCapitalLetters();
+        numberOfCapitalLetters.checksNumberOfCapitalLetters(someText);
+        Integer counter = numberOfCapitalLetters.getCounterOfCapitalLetters();;
 
         Assertions.assertNotEquals(5, counter);
 

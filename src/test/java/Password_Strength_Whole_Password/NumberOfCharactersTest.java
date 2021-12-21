@@ -2,52 +2,58 @@ package Password_Strength_Whole_Password;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static Password_Strength_Whole_Password.NumberOfCharactersInterface.checksNumberOfCharacters;
-import static Password_Strength_Whole_Password.NumberOfCharacters.getPasswordLength;
 
 public class NumberOfCharactersTest {
 
     @Test
     public void NumberOfCharactersTestReturnValue01(){
 
+        NumberOfCharacters numberOfCharacters = new NumberOfCharacters();
+
         String someText = "some text";
 
-        String numberOfCharacters = checksNumberOfCharacters(someText);
+        String number = numberOfCharacters.checksNumberOfCharacters(someText);
 
-        Assertions.assertEquals("some text", numberOfCharacters);
+        Assertions.assertEquals("some text", number);
 
     }
 
     @Test
     public void NumberOfCharactersTestReturnValue02(){
 
+        NumberOfCharacters numberOfCharacters = new NumberOfCharacters();
+
         String someText = "text";
 
-        String numberOfCharacters = checksNumberOfCharacters(someText);
+        String number =  numberOfCharacters.checksNumberOfCharacters(someText);
 
-        Assertions.assertNotEquals("some text", numberOfCharacters);
+        Assertions.assertNotEquals("some text", number);
 
     }
 
     @Test
     public void NumberOfCharactersTestReturnValue03(){
 
+        NumberOfCharacters numberOfCharacters = new NumberOfCharacters();
+
         String someText = "text";
 
-        String numberOfCharacters = checksNumberOfCharacters(someText);
+        String number = numberOfCharacters.checksNumberOfCharacters(someText);
 
-        Assertions.assertNotNull(numberOfCharacters);
+        Assertions.assertNotNull(number);
 
     }
 
     @Test
     public void NumberOfCharactersTestSignNumber01(){
 
+        NumberOfCharacters numberOfCharacters = new NumberOfCharacters();
+
         String someText = "01234";
 
-        NumberOfCharacters.checksNumberOfCharacters(someText);
+        numberOfCharacters.checksNumberOfCharacters(someText);
 
-        Integer passwordLength = getPasswordLength();
+        Integer passwordLength = numberOfCharacters.getPasswordLength();
 
         Assertions.assertEquals(5, passwordLength);
 
@@ -56,15 +62,16 @@ public class NumberOfCharactersTest {
     @Test
     public void NumberOfCharactersTestSignNumber02(){
 
+        NumberOfCharacters numberOfCharacters = new NumberOfCharacters();
+
         String someText = "0123456789";
 
-        NumberOfCharacters.checksNumberOfCharacters(someText);
+        numberOfCharacters.checksNumberOfCharacters(someText);
 
-        Integer passwordLength = getPasswordLength();
+        Integer passwordLength = numberOfCharacters.getPasswordLength();
 
         Assertions.assertNotEquals(5, passwordLength);
 
     }
-
 
 }
